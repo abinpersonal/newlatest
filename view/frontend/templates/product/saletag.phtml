@@ -1,0 +1,13 @@
+<?php
+/** @var \Magento\Catalog\Model\Product $product */
+$product = $block->getProduct();
+$originalPrice = $product->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue();
+$finalPrice = $product->getPriceInfo()->getPrice('final_price')->getAmount()->getValue();
+
+if ($finalPrice < $originalPrice): ?>
+    <div class="custom-sale-pdp">
+    Sale
+    </div>
+<?php endif; ?>
+
+
